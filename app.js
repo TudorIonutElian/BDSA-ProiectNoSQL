@@ -4,11 +4,13 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 require('dotenv/config');
+const bodyParser = require('body-parser');
 
 // Import rute din routes folder
 const produseRoutes = require('./routes/produse.js');
 
 // Middleware pentru fiecare clasa
+app.use(bodyParser.json());
 app.use('/produse', produseRoutes);
 
 
