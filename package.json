@@ -1,0 +1,25 @@
+{
+  "name": "bdsa-proiectnosql",
+  "version": "1.0.0",
+  "description": "Proiect BDSA - Baze de Date NoSQL",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TudorIonutElian/BDSA-ProiectNoSQL.git"
+  },
+  "author": "Tudor Ionut Elian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TudorIonutElian/BDSA-ProiectNoSQL/issues"
+  },
+  "homepage": "https://github.com/TudorIonutElian/BDSA-ProiectNoSQL#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.8",
+    "nodemon": "^2.0.6"
+  }
+}
