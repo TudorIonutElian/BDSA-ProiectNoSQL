@@ -1,12 +1,29 @@
 const express = require('express');
+const produs = require('../models/Produs');
 const router = express.Router();
 
-router.get('/', (req, res)=>{
-    res.send("Suntem in pagina produse");
+
+router.get('/', async (req, res)=>{
+    try {
+       //const produseAll = await produs.find({});
+       let toateProdusele = null;
+       await produs.find().then(data => toateProdusele = data);
+       res.json(toateProdusele);
+        
+    } catch (error) {
+        console.log({message: error});
+    }
+    
 });
 
-router.get(`/:id`, (req, res)=>{
-    res.send(`Suntem in pagina produsului ${req.params.id}`);
+router.get(`/:id`, async (req, res)=>{
+    try {
+        //const produseAll = await produs.find({});
+        let produsFinal = await produs.findById({"_id": `${req.params.id}`});
+        res.json(produsFinal);
+     } catch (error) {
+         console.log({message: error});
+     }
 });
 
 router.post(`/`, (req, res)=>{
